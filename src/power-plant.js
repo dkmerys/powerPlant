@@ -8,6 +8,7 @@ const storeState = () => {
 }
 
 const stateChanger = storeState();
+const stateChanger2 = storeState();
 
 const changeState = (prop) => {
   return (value) => {
@@ -41,6 +42,21 @@ $(document).ready(function() {
     const newerState = stateChanger(dryOut)
     $('#light-value').text(newState.light)
     $('#water-value').text(newState.water)
+  });
+
+  $('#feed2').click(function() {
+    const newState = stateChanger2(blueFood);
+    $('#soil-value2').text(newState.soil);
+  });
+  $('#hydrate2').click(function() {
+    const newState = stateChanger2(hydrate);
+    $('#water-value2').text(newState.water);
+  });
+  $('#sun-exposure2').click(function(){
+    const newState = stateChanger2(giveLight)
+    const newerState = stateChanger2(dryOut)
+    $('#light-value2').text(newState.light)
+    $('#water-value2').text(newState.water)
   });
   
 });
